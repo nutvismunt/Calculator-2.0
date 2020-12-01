@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:calculator="clr-namespace:Calculator" xmlns:d1="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             x:Class="Calculator.MainPage">
+    <Grid BackgroundColor="Gray" >
+
+        <Label x:Name="resultLabel"  BackgroundColor="#191a1c" TextColor="LightGreen" Text="" FontSize="35" 
+               LineBreakMode="WordWrap" Grid.ColumnSpan="4" MaxLines="2" Margin="5,5,5,0" 
+               HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+
+        <Button Text="7"  Grid.Row="1" Grid.Column="0" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3" Clicked="OnSelectNum"/>
+        <Button  Text="8" Grid.Row="1" Grid.Column="1" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3"  Clicked="OnSelectNum"/>
+        <Button  Text="9" Grid.Row="1" Grid.Column="2" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3"  Clicked="OnSelectNum"/>
+        <Button Text="/" Grid.Row="1" Grid.Column="3" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+                BackgroundColor="White" TextColor="Black"
+                FontSize="Large" BorderRadius="3"  Clicked="OnSelectOperator"/>
+
+        <Button Text="4" Grid.Row="2" Grid.Column="0" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3"  Clicked="OnSelectNum"/>
+        <Button Text="5" Grid.Row="2" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               FontSize="Large" BorderRadius="3" Clicked="OnSelectNum"/>
+        <Button Text="6" Grid.Row="2" Grid.Column="2" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black" 
+               FontSize="Large" BorderRadius="3" Clicked="OnSelectNum"/>
+        <Button Text="*" Grid.Row="2" Grid.Column="3" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+              BackgroundColor="White" TextColor="Black"
+                FontSize="Large" BorderRadius="3" Clicked="OnSelectOperator"/>
+
+        <Button Text="1" Grid.Row="3" Grid.Column="0" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3"  Clicked="OnSelectNum"/>
+        <Button  Text="2" Grid.Row="3" Grid.Column="1" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3"  Clicked="OnSelectNum"/>
+        <Button Text="3" Grid.Row="3" Grid.Column="2" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3" Clicked="OnSelectNum"/>
+        <Button Text="-" Grid.Row="3" Grid.Column="3" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+              BackgroundColor="White" TextColor="Black"
+                FontSize="35"   Clicked="OnSelectOperator"/>
+
+        <Button Text="0" Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="0" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3"  Clicked="OnSelectNum"/>
+        <Button Text="+" Grid.Row="4" Grid.Column="3" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large"  Clicked="OnSelectOperator"/>
+
+        <Button Text="C" Grid.Row="5" Grid.Column="0" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black" 
+               FontSize="Large" BorderRadius="3" Clicked="OnDelete"/>
+        <Button Text="⬅" Grid.Row="5" Grid.Column="1" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large" BorderRadius="3" Clicked="OnClear"/>
+        <Button Text="." Grid.Row="5" Grid.Column="2" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large"  Clicked="OnSelectOperator"/>
+        <Button Text="=" Grid.Row="5" Grid.Column="3" BorderColor="LightGray"  BorderWidth="7" FontAttributes="Bold"
+               BackgroundColor="White" TextColor="Black"
+               FontSize="Large"  Clicked="OnCalculate"/>
+    </Grid>
+
+</ContentPage>
+
