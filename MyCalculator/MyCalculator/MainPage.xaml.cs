@@ -2,7 +2,7 @@
 using System.Linq;
 using Xamarin.Forms;
 
-namespace Calculator
+namespace MyCalculator
 {
     public partial class MainPage : ContentPage
     {
@@ -13,10 +13,7 @@ namespace Calculator
         public MainPage()
         {
             InitializeComponent();
-            resultLabel.Text = startValue;
-            resultLabel.FontSize = 35;
         }
-
         void OnClear(object sender, EventArgs e)
         {
             resultLabel.Text = resultLabel.Text.Substring(0, resultLabel.Text.Length - 1);
@@ -38,7 +35,7 @@ namespace Calculator
         {
             var num = sender as Button;
             var result = resultLabel.Text;
-            if (numLength>=14)
+            if (numLength >= 14)
             {
                 goto End;
             }
@@ -67,7 +64,7 @@ namespace Calculator
         {
             var result = resultLabel.Text;
             var num = sender as Button;
-            var operation =num.Text!="."? ' '+ num.Text + ' ': num.Text;
+            var operation = num.Text != "." ? ' ' + num.Text + ' ' : num.Text;
             MaxLength(resultLabel.Text.Count());
             resultLabel.Text = char.IsDigit(result.Last()) ? result + operation : result.Remove(result.Length - 1).Insert(result.Length - 1, operation);
             isNextNum = true;
@@ -82,13 +79,14 @@ namespace Calculator
                 try
                 {
                     char check = ' ';
-                    string [] numbers = labelText.Split(check);
+                    string[] numbers = labelText.Split(check);
                     var answer = Calculation(numbers);
                     resultLabel.Text = answer.ToString();
                     MaxLength(resultLabel.Text.Count());
                 }
-                catch (Exception) { 
-                    resultLabel.Text = "Ошибка"; 
+                catch (Exception)
+                {
+                    resultLabel.Text = "Ошибка";
                 }
             }
         }
@@ -105,12 +103,12 @@ namespace Calculator
             }
         }
 
-        public double Calculation(string [] enumer)
+        public double Calculation(string[] enumer)
         {
             double result = double.Parse(enumer[0]);
-            for (int i=0; i<enumer.Length; i++)
+            for (int i = 0; i < enumer.Length; i++)
             {
-                
+
                 switch (enumer[i])
                 {
                     case "+":
@@ -120,7 +118,7 @@ namespace Calculator
                         result -= double.Parse(enumer[i + 1]);
                         break;
                     case "/":
-                        result /=double.Parse(enumer[i + 1]);
+                        result /= double.Parse(enumer[i + 1]);
                         break;
                     case "*":
                         result *= double.Parse(enumer[i + 1]);
@@ -129,6 +127,7 @@ namespace Calculator
             }
             return result;
         }
+    }
+   
+}
 
-}
-}
